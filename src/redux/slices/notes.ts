@@ -7,7 +7,7 @@ import { NoteEmptyState } from "@/models";
 }*/
 
 export const notesSlice = createSlice({
-  name: 'notes',
+  name: "notes",
   initialState: NoteEmptyState,
   reducers: {
     addNote: (state, action) => {
@@ -15,23 +15,26 @@ export const notesSlice = createSlice({
       return updatedState;
     },
     removeNote: (state, action) => {
-      const index = state.findIndex(note => note.id === action.payload);
+      const index = state.findIndex((note) => note.id === action.payload);
       if (index !== -1) {
-        const updatedState = [...state.slice(0, index), ...state.slice(index + 1)];
+        const updatedState = [
+          ...state.slice(0, index),
+          ...state.slice(index + 1),
+        ];
         return updatedState;
       }
       return state;
     },
     updateNote: (state, action) => {
-      const index = state.findIndex(note => note.id === action.payload.id);
+      const index = state.findIndex((note) => note.id === action.payload.id);
       if (index !== -1) {
         const updatedState = [...state];
         updatedState[index] = action.payload;
         return updatedState;
       }
       return state;
-    }
-  }
+    },
+  },
 });
 
 export const { addNote, removeNote, updateNote } = notesSlice.actions;

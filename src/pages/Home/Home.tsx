@@ -1,6 +1,10 @@
-export default function Home () {
+import { LayoutStyled } from "@/styled-components";
+import { InfiniteScroll } from "@/components/infinite-scroll";
+
+export default function Home() {
   return (
-    <div></div>
+    <LayoutStyled>
+      <InfiniteScroll />
+    </LayoutStyled>
   );
 }
-
