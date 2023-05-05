@@ -24,7 +24,7 @@ export const NotesContainer = styled.div<{ backgroundColor?: string }>`
   }
 
   &:hover {
-    transform: scale(1.05) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
   }
 `;
 

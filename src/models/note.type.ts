@@ -5,13 +5,3 @@ export interface Note {
   content: string;
   date?: string;
 }
-
-export const NoteEmptyState: Note[] = [
-  {
-    id: 0,
-    title: '',
-    type: '',
-    content: '',
-    date: ''
-  }
-]

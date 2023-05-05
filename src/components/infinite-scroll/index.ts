@@ -1,2 +1,2 @@
-export { default as InfiniteScroll } from './InfiniteNotesScroll';
-export * from './infinite-scroll.styled.ts'
+export { default as InfiniteScroll } from "./InfiniteScroll.tsx";
+export * from "./infinite-scroll.styled.ts";

@@ -1,2 +1,2 @@
-export { default as notesReducer } from './notes';
-export * from './notes';
+export { default as notesReducer } from "./notes";
+export * from "./notes";
