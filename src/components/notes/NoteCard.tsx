@@ -9,7 +9,9 @@ export default function NoteCard({ title, type, content, date }: Note) {
       <TextStyled>{type}</TextStyled>
       <TextStyled>{date}</TextStyled>
       <TextStyled>
-        {content ?? ""?.length > 160 ? content?.slice(0, 160) + "..." : content}
+        {(content ?? "").length > 160
+          ? content?.slice(0, 160) + "..."
+          : content}
       </TextStyled>
       <Pin />
     </NotesContainer>

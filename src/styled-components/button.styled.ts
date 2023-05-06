@@ -11,6 +11,10 @@ export const ButtonStyled = styled.button<{ margin?: string }>`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   margin: ${(props) => props.margin || "0"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 
   &:hover {
     background-color: #d0efb8;

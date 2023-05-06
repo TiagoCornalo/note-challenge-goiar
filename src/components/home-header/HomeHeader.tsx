@@ -5,7 +5,12 @@ import {
   HomeHeaderStyled,
   SearchAndFilterContainer,
 } from "@/components/home-header";
-import { AlignSelfEnd, RowContainer, TitleStyled } from "@/styled-components";
+import {
+  AlignSelfEnd,
+  RowContainer,
+  TextStyled,
+  TitleStyled,
+} from "@/styled-components";
 import { Logo } from "@/components/logo";
 import { IoAddSharp } from "react-icons/io5";
 import { SearchBar } from "@/components/search-bar";
@@ -32,6 +37,7 @@ export default function HomeHeader() {
             }
           >
             <IoAddSharp size={24} />
+            <TextStyled>Añadir nota</TextStyled>
           </Button>
         </AlignSelfEnd>
       </RowContainer>

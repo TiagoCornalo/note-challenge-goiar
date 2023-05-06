@@ -38,7 +38,7 @@ export default function SearchBar() {
         onChange={handleQueryChange}
         onKeyDown={handleKeyDown}
       />
-      <SearchButton onClick={handleSearch}>
+      <SearchButton onClick={handleSearch} data-testid="search-button">
         <SearchIcon />
       </SearchButton>
     </SearchBarContainer>

@@ -12,7 +12,6 @@ export default function useInfiniteScroll(items: any[]) {
 
   useEffect(() => {
     /*const updatedItems = items.slice(0, visibleData);*/
-    console.log(items);
     setDisplayedData(items);
   }, [visibleData, items]);
 

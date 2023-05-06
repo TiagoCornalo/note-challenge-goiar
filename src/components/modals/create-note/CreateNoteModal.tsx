@@ -20,7 +20,7 @@ export default function CreateNoteModal() {
 
   return (
     <CreateNoteModalStyled>
-      <TitleStyled size={"24px"}>Crear nota</TitleStyled>
+      <TitleStyled size={"24px"}>Crear nueva nota</TitleStyled>
       <CreateNoteForm onSubmit={handleCreateNote}>
         <Input
           name={"title"}
@@ -29,7 +29,12 @@ export default function CreateNoteModal() {
           value={modalForm.title}
           placeholder={"Título de la nota"}
         ></Input>
-        <Select options={types} onChange={(e: any) => handleTypeChange(e)} />
+        <Select
+          aria-label={"Selecciona un tipo de nota"}
+          options={types}
+          onChange={(e: any) => handleTypeChange(e)}
+          placeholder={"Selecciona un tipo de nota"}
+        />
         <TextArea
           placeholder={"Contenido de la nota"}
           rows={5}
