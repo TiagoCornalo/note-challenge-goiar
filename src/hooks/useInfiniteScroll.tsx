@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-export default function useInfiniteScroll(items: []) {
+export default function useInfiniteScroll(items: any[]) {
   const [hasMore, setHasMore] = useState(true);
   const [visibleData, setVisibleData] = useState(6);
   const [dataLength, setDataLength] = useState(0);
-  const [displayedData, setDisplayedData] = useState([]);
+  const [displayedData, setDisplayedData] = useState<any[]>([]);
 
   useEffect(() => {
     setDataLength(items.length);

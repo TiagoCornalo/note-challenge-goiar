@@ -7,3 +7,7 @@ export const CreateNoteModalStyled = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const CreateNoteForm = styled.form`
+  display: grid;
+`;

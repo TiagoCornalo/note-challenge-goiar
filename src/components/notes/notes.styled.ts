@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const NotesContainer = styled.div<{ backgroundColor?: string }>`
+export const NotesContainer = styled.div`
   width: 200px;
   position: relative;
-  height: 200px;
-  background-color: ${(props) => props.backgroundColor || "#e3f6fd"};
+  background-color: #f6e0a4;
   padding: 20px;
   line-height: 1.5;
   text-align: center;

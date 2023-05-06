@@ -22,6 +22,7 @@ export type CustomSelectOption = {
 
 interface CreateNoteEvents {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleTextAreaChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   handleTypeChange: (e: { value: string }) => void;
   handleCreateNote: (e: React.FormEvent<HTMLFormElement>) => void;
   modalForm: ModalForm;
@@ -45,6 +46,11 @@ export default function useCreateNote(): CreateNoteEvents {
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setModalForm((prevValue) => ({ ...prevValue, [name]: value }));
+  };
+
+  const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setModalForm((prevValue) => ({ ...prevValue, [name]: value }));
   };
@@ -84,5 +90,6 @@ export default function useCreateNote(): CreateNoteEvents {
     handleCreateNote,
     modalForm,
     types,
+    handleTextAreaChange,
   };
 }

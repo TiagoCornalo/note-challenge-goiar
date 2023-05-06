@@ -41,7 +41,7 @@ export const notesSlice = createSlice({
       const regex = new RegExp(searchText, "i");
       const updatedState = [...state];
       return updatedState.filter(
-        (note) => regex.test(note.title) || regex.test(note.content)
+        (note) => regex.test(note.title) || regex.test(note.content || "")
       );
     },
     filterByNoteType: (state, action) => {

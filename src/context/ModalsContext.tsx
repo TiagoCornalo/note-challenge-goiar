@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
-interface Modal {
+export interface Modal {
   id?: string;
   content?: ReactNode;
   onClose?: () => void;
@@ -9,8 +9,8 @@ interface Modal {
 
 interface ModalContextValue {
   modals?: Modal[];
-  addModal?: (modal: Modal) => void;
-  removeModal?: (modal: Modal) => void;
+  addModal: (modal: Modal) => void;
+  removeModal: (modal: Modal) => void;
   removeAllModals?: () => void;
 }
 

@@ -5,10 +5,12 @@ import { TitleStyled, TextStyled } from "@/styled-components";
 export default function NoteCard({ title, type, content, date }: Note) {
   return (
     <NotesContainer>
-      <TitleStyled>{title}</TitleStyled>
+      <TitleStyled margin={"10px 0 0 0"}>{title}</TitleStyled>
       <TextStyled>{type}</TextStyled>
       <TextStyled>{date}</TextStyled>
-      <TextStyled>{content}</TextStyled>
+      <TextStyled>
+        {content ?? ""?.length > 160 ? content?.slice(0, 160) + "..." : content}
+      </TextStyled>
       <Pin />
     </NotesContainer>
   );

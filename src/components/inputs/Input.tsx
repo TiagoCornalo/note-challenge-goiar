@@ -1,3 +1,4 @@
+import React from "react";
 import { InputStyled } from "@/components/inputs";
 
 type InputProps = {

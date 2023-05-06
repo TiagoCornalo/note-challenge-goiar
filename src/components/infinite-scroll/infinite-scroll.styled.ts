@@ -6,5 +6,7 @@ export const InfiniteScrollContainer = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 100px;
+  margin-top: 3%;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 20px;
 `;
