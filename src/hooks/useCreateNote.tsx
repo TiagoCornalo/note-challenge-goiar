@@ -11,10 +11,6 @@ interface ModalForm {
   content?: string;
 }
 
-export interface SelectOption {
-  value: string;
-  label: string;
-}
 export type CustomSelectOption = {
   value?: string;
   label?: string;
@@ -26,7 +22,6 @@ interface CreateNoteEvents {
   handleTypeChange: (e: { value: string }) => void;
   handleCreateNote: (e: React.FormEvent<HTMLFormElement>) => void;
   modalForm: ModalForm;
-  types: SelectOption[];
 }
 
 export default function useCreateNote(): CreateNoteEvents {
@@ -37,13 +32,6 @@ export default function useCreateNote(): CreateNoteEvents {
     content: "",
     type: "",
   });
-
-  const types: SelectOption[] = [
-    { value: "Tareas de casa", label: "Tareas de casa" },
-    { value: "Tareas del trabajo", label: "Tareas del trabajo" },
-    { value: "Ideas nuevas", label: "Ideas nuevas" },
-    { value: "Diario personal", label: "Diario personal" },
-  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -89,7 +77,6 @@ export default function useCreateNote(): CreateNoteEvents {
     handleTypeChange,
     handleCreateNote,
     modalForm,
-    types,
     handleTextAreaChange,
   };
 }

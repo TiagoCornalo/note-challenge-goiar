@@ -9,4 +9,8 @@ export const InfiniteScrollContainer = styled.div`
   margin-top: 3%;
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 20px;
+
+  @media (max-width: 500px) {
+    margin-top: 10%;
+  }
 `;

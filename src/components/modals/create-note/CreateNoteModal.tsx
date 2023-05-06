@@ -7,6 +7,7 @@ import {
 } from "@/components/modals/create-note";
 import { TextArea, TitleStyled } from "@/styled-components";
 import { Button } from "@/components/buttons";
+import { types } from "@/models";
 
 export default function CreateNoteModal() {
   const {
@@ -14,7 +15,6 @@ export default function CreateNoteModal() {
     handleTypeChange,
     handleCreateNote,
     modalForm,
-    types,
     handleTextAreaChange,
   } = useCreateNote();
 
