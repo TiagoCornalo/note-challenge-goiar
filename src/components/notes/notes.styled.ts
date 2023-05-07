@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const NotesContainer = styled.div`
+  cursor: pointer;
   width: 200px;
   position: relative;
   background-color: #f6e0a4;

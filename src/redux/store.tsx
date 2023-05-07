@@ -5,6 +5,7 @@ export interface AppStore {
   notes: {
     notes: Note[];
     originalNotes: Note[];
+    selectedNote: Note | null;
   };
 }
 

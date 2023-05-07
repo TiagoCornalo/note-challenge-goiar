@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Note } from "@/models";
+import { Note, NotesState } from "@/models";
 import toast from "react-hot-toast";
 const storedNotes = localStorage.getItem("notes");
 export const NoteInitialState: Note[] = storedNotes
   ? JSON.parse(storedNotes)
   : [];
 
+const initialState: NotesState = {
+  notes: NoteInitialState,
+  originalNotes: NoteInitialState,
+  selectedNote: null,
+};
+
 export const notesSlice = createSlice({
   name: "notes",
-  initialState: {
-    notes: NoteInitialState,
-    originalNotes: NoteInitialState,
-  },
+  initialState,
   reducers: {
     addNote: (state, action) => {
       const updatedNotes = [action.payload, ...state.notes];
       const updatedState = {
+        ...state,
         notes: updatedNotes,
         originalNotes: updatedNotes,
       };
@@ -23,6 +27,7 @@ export const notesSlice = createSlice({
       return updatedState;
     },
     removeNote: (state, action) => {
+      console.log(action.payload);
       const index = state.notes.findIndex((note) => note.id === action.payload);
       if (index !== -1) {
         const updatedNotes = [
@@ -30,6 +35,7 @@ export const notesSlice = createSlice({
           ...state.notes.slice(index + 1),
         ];
         const updatedState = {
+          ...state,
           notes: updatedNotes,
           originalNotes: updatedNotes,
         };
@@ -46,6 +52,7 @@ export const notesSlice = createSlice({
         const updatedNotes = [...state.notes];
         updatedNotes[index] = action.payload;
         const updatedState = {
+          ...state,
           notes: updatedNotes,
           originalNotes: updatedNotes,
         };
@@ -53,6 +60,12 @@ export const notesSlice = createSlice({
         return updatedState;
       }
       return state;
+    },
+    selectNote: (state, action) => {
+      state.selectedNote = action.payload;
+    },
+    clearSelectedNote: (state) => {
+      state.selectedNote = null;
     },
     filterByTitleOrDescription: (state, action) => {
       const { searchText } = action.payload;
@@ -99,6 +112,8 @@ export const {
   filterByNoteType,
   filterByTitleOrDescription,
   resetNotes,
+  selectNote,
+  clearSelectedNote,
 } = notesSlice.actions;
 
 export default notesSlice.reducer;

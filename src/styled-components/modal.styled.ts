@@ -6,7 +6,7 @@ import {
   ToBottom,
 } from "./animation.styled";
 export const ModalContainer = styled.div<{ isClosing?: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
