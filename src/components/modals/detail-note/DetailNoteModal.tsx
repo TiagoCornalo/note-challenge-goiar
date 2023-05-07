@@ -31,7 +31,7 @@ export default function DetailNoteModal() {
 
   return (
     <DetailNoteModalStyled>
-      <DeleteNoteButton onClick={handleDeleteNote}>
+      <DeleteNoteButton onClick={handleDeleteNote} data-testid="delete-button">
         <DeleteNoteIcon />
       </DeleteNoteButton>
       <TitleStyled margin="10px 0 0 0">{selectedNote?.title}</TitleStyled>
