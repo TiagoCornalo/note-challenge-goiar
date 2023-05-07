@@ -31,7 +31,7 @@ describe("Create note", () => {
     content: "Test content",
   };
 
-  it("renders the create note modal", async () => {
+  it("should render the create note modal", async () => {
     const addButton = await screen.findByRole("button", {
       name: /Añadir nota/i,
     });
@@ -39,7 +39,7 @@ describe("Create note", () => {
     expect(await screen.findByText(/Crear nueva nota/i)).toBeInTheDocument();
   });
 
-  it("adds a note", async () => {
+  it("should add a new note", async () => {
     const addButton = await screen.findByRole("button", {
       name: /Añadir nota/i,
     });

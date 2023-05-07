@@ -8,7 +8,8 @@ import { HomeHeader } from "@/components/home-header";
 
 export default function Home() {
   const { notes } = useSelector((state: AppStore) => state.notes);
-  const { displayedData } = useInfiniteScroll(notes);
+  const { displayedData } = useInfiniteScroll({ items: notes });
+
   return (
     <LayoutStyled>
       <HomeHeader />

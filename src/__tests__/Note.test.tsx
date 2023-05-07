@@ -12,22 +12,22 @@ describe("NoteCard component", () => {
     date: "2023-05-06",
   };
 
-  it("renders the note title", () => {
+  it("should render the note title", () => {
     const { getByText } = render(<NoteCard {...note} />);
     expect(getByText(note.title)).toBeInTheDocument();
   });
 
-  it("renders the note type", () => {
+  it("should render the note type", () => {
     const { getByText } = render(<NoteCard {...note} />);
     expect(getByText(note.type)).toBeInTheDocument();
   });
 
-  it("renders the note date", () => {
+  it("should render the note date", () => {
     const { getByText } = render(<NoteCard {...note} />);
     expect(getByText(note.date)).toBeInTheDocument();
   });
 
-  it("renders the note content", () => {
+  it("should render the note content", () => {
     const { getByText } = render(<NoteCard {...note} />);
     expect(getByText(note.content)).toBeInTheDocument();
   });
