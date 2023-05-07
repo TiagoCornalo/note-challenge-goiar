@@ -11,6 +11,7 @@ import { SearchBar } from "@/components/search-bar";
 const initialState = {
   notes: [],
   originalNotes: [],
+  selectedNote: null,
 };
 
 describe("Search note", () => {
