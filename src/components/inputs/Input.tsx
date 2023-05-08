@@ -3,7 +3,7 @@ import { InputStyled } from "@/components/inputs";
 
 type InputProps = {
   name: string;
-  value: string;
+  value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   type: string;

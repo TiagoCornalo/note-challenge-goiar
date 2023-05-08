@@ -5,7 +5,7 @@ import { addNote } from "@/redux/slices";
 import toast from "react-hot-toast";
 import { Note } from "@/models";
 
-interface ModalForm {
+export interface ModalForm {
   type: string;
   title: string;
   content?: string;
